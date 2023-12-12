@@ -65,12 +65,29 @@ const TextIcon = styled.span`
   color: #cd5ff8;
 }
 `;
-const Li =styled.li`
-margin-bottom: 10px;
-&:hover {
+const Li = styled.li`
+//   margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+
+  &:hover {
     transform: scale(1.1);
   }
-`
+
+  a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+
+    p {
+      margin-left: 10px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+  }
+`;
+
 const Hr =styled.div`
 display: flex;
 align-items: center;
@@ -130,7 +147,7 @@ function Sidebar() {
                 rel="noopener noreferrer"
               >
                 <AiOutlineGithub style={{height: '25px', width: '25px'}}/>
-                {/* <p>Github</p> */}
+                <p>Github</p>
               </a>
             </Li>
             <Li>
@@ -141,6 +158,7 @@ function Sidebar() {
                 rel="noopener noreferrer"
               >
                 <AiOutlineTwitter style={{height: '25px', width: '25px'}}/>
+                <p>Twitter</p>
               </a>
             </Li>
             <Li>
@@ -151,6 +169,7 @@ function Sidebar() {
                 rel="noopener noreferrer"
               >
                 <FaLinkedinIn style={{height: '25px', width: '25px'}}/>
+                <p>LinkedIn</p>
               </a>
             </Li>
             <Li >
@@ -161,6 +180,7 @@ function Sidebar() {
                 rel="noopener noreferrer"
               >
                 <AiOutlineInstagram style={{height: '25px', width: '25px'}}/>
+                <p>instagram</p>
               </a>
             </Li>
           </ul>
