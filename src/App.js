@@ -1,4 +1,6 @@
 // import './style.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';  
+
 import {
   BrowserRouter as Router,
   Route,
@@ -12,12 +14,14 @@ import About from "./components/Pages/About";
 function App() {
   return (
     <Router>
-      <NavBar />
+     <div className="App">
+     <NavBar />
       <Sidebar/>
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/about" element={<About/>} />
       </Routes>
+      </div>
     </Router>
   );
 }

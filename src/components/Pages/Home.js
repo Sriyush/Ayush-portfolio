@@ -1,17 +1,21 @@
+
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col} from "react-bootstrap";
 import Particle from "../Particle";
 import cover from "../../assets/cover.png";
 import styled, { keyframes } from "styled-components";
+// import 'bootstrap/dist/css/bootstrap.min.css';
+import {Button} from 'react-bootstrap';
 import ayush from "../../assets/Ayush.jpg";
 import Type from "../Type";
+
 function Home() {
   return (
     <section>
       <Container fluid>
         <Particle />
         <Container style={{padding: 90}}>
-          <Row style={{ marginLeft: 190, marginBlock: 100,display: "flex", flexDirection: "row" ,justifyContent: "space-between"}}>
+          <Rows>
             <Col md={7}>
               <H1 style={{ paddingBottom: 15}} >
                 Hi There!{" "}
@@ -29,17 +33,48 @@ function Home() {
               <StyledType>
                 <Type />
               </StyledType>
+              <BUTTON>Resume</BUTTON>
             </Col>
             <Col md={5} >
                 <Img src={ayush} alt="ayush" className="img-fluid"/>
             </Col>
-          </Row>
+            </Rows>
         </Container>
       </Container>
     </section>
   );
 }
+const Rows =styled(Row)`
+margin-left: 190px;
+margin-block: 100px;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+@media (max-width: 760px) {
+  margin-left: 0;
+  margin-block: 0;
+  display: flex;
+  flex-direction: column;
+}
+`
+const BUTTON = styled.button`
+  background: linear-gradient(to right, transparent 50%, transparent 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: background-position 0.3s ease-in-out, color 0.3s ease-in-out;
+  color: #cd5ff8;
+  border: 2px solid #cd5ff8;
+  height: 30px;
+  margin-top: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0 0 10px #cd5ff8;
 
+  &:hover {
+    background-position: left bottom;
+    color: white;
+  }
+`;
 const waveAnimation = keyframes`
   0% {
     transform: rotate(0deg);

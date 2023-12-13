@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
 import styled from 'styled-components';
-import { Col } from 'react-bootstrap';
+import { Col} from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import {
     AiFillStar,
@@ -16,13 +16,16 @@ import {
   } from "react-icons/ai";
   import { FaLinkedinIn } from "react-icons/fa";
   const SidebarWrapper = styled.div`
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   margin-left: 30px;
   transform: translateY(50%);
   height: 50%;
   border-radius: 5px;
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const Buttoncontainer = styled.div`
@@ -98,7 +101,6 @@ height: 5px;
 flex: 1;
 border-radius: 10px;
 `
-
 function Sidebar() {
     const [expand, updateExpanded] = useState(false);
   return (

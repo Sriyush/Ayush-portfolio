@@ -1,56 +1,126 @@
 import React, { useState } from "react";
-import Navbar from "react-bootstrap/Navbar";
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import ParticleComponent from "./Particle";
-import { NavbarCollapse } from "react-bootstrap";
-function NavBar() {
-  const [navColour, updateNavbar] = useState(false);
-  const [expand, updateExpanded] = useState(false);
-  function scrollHandler() {
-    if (window.scrollY >= 20) {
-      updateNavbar(true);
-    } else {
-      updateNavbar(false);
-    }
-  }
+import { FaBars, FaTimes } from "react-icons/fa";
 
-  window.addEventListener("scroll", scrollHandler);
+const NavbarContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  z-index: 10;
+  top: 0;
+`;
 
-  return (
-    <Navbar
-      fixed="top"
-      expand="md"
-    //   className={navColour ? "sticky" : "navbar"}
-    >
-      <StyledContainer>
-        <Link to="/" style={{ textDecoration: "none" }}>
-          <H1>Ayush Srivastava</H1>
-        </Link>
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="ms-auto" defaultActiveKey="#home">
-            {/* <Nav.Item>
-              <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>
-                <AiOutlineHome style={{ marginBottom: "2px" }} /> Home
-              </Nav.Link>
-            </Nav.Item> */}
-            </Nav>
-            </Navbar.Collapse>
-      </StyledContainer>
-    </Navbar>
-  );
-}
+const LogoContainer = styled(Link)`
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  margin: 10px;
+`;
 
-export default NavBar;
-
-const H1 = styled.h1`
-  margin-left: 50px;
-  font-size: 30px;
+const Logo = styled.h1`
+  font-size: 2rem;
+  font-weight: bold;
   color: white;
 `;
 
-const StyledContainer = styled(Container)`
-  //   background-color: black;
+const NavMenu = styled.ul`
+  display:  none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  
+  @media screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: ;
+    margin-top: 4rem;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: black;
+    position: absolute;
+    top: 0;
+    left: ${({ click }) => (click ? "0" : "-100%")};
+    z-index: -3;
+    transition: 0.3s;
+  }
 `;
+
+const NavItem = styled.li`
+  padding: 0 1rem;
+  color: white;
+  @media screen and (max-width: 768px) {
+    padding: 1rem 0;
+  }
+`;
+
+const NavLink = styled(Link)`
+  text-decoration: none;
+  color: inherit;
+  font-size: 1.2rem;
+  font-weight: 500;
+
+  &:hover {
+    color: rgb(64, 27, 138);
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: 2rem;
+  }
+`;
+
+const Hamburger = styled.div`
+  display: none;
+  color: white;
+  margin: 20px;
+  @media screen and (max-width: 768px) {
+    display: inline;
+    cursor: pointer;
+  }
+`;
+
+const Navbar = () => {
+  const navigate = useNavigate();
+  const [click, setClick] = useState(false);
+
+  const handleClick = () => setClick(!click);
+
+  return (
+    <NavbarContainer>
+      <LogoContainer to="/">
+        <Logo>Ayush Srivastava</Logo>
+      </LogoContainer>
+
+      <NavMenu click={click}>
+        <NavItem>
+          <NavLink to="/" className="hoverElement" onClick={handleClick}>
+            Home
+          </NavLink>
+        </NavItem>
+
+        <NavItem>
+          <NavLink to="/about" className="hoverElement" onClick={handleClick}>
+            About
+          </NavLink>
+        </NavItem>
+
+        <NavItem>
+          <NavLink to="/projects" className="hoverElement">
+            Projects
+          </NavLink>
+        </NavItem>
+      </NavMenu>
+
+      <Hamburger onClick={handleClick}>
+        {click ? <FaTimes size={20} /> : <FaBars size={20} />}
+      </Hamburger>
+    </NavbarContainer>
+  );
+};
+
+export default Navbar;
