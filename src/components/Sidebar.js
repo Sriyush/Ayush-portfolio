@@ -122,8 +122,10 @@ function Sidebar() {
       </IconTextContainer>
 
       <IconTextContainer>
+      <Nav.Link as={Link} to="/projects" onClick={() => updateExpanded(false)} style={{ textDecoration: "none" }}>
         <SidebarIcon><AiOutlineFundProjectionScreen style={{height: '20px', width: '20px'}}/></SidebarIcon>
         <TextIcon>Projects</TextIcon>
+        </Nav.Link>
       </IconTextContainer>
       </Buttoncontainer> 
       <Hr>

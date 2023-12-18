@@ -11,6 +11,7 @@ import NavBar from './components/Navbar';
 import Home from "./components/Pages/Home";
 import Sidebar from "./components/Sidebar";
 import About from "./components/Pages/About";
+import Project from "./components/Pages/Projects";
 function App() {
   return (
     <Router>
@@ -20,6 +21,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/about" element={<About/>} />
+        <Route path="/projects" element={<Project/>} />
       </Routes>
       </div>
     </Router>
