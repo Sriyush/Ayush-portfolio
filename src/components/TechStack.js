@@ -7,14 +7,11 @@ import {
   DiReact,
   DiPython,
   DiNodejs,
-  DiGit,
   DiDart,
   DiHtml5,
   DiMongodb,
 } from "react-icons/di";
 import {
-  SiSolidity,
-  SiFlutter,
   SiFirebase,
   SiExpress,
   SiCss3,

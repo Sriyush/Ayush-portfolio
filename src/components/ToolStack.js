@@ -1,25 +1,12 @@
 import React from "react";
 import { Row, Container, Col } from "react-bootstrap";
 import styled from "styled-components";
-import { CgCPlusPlus } from "react-icons/cg";
 import {
-  DiJavascript1,
-  DiReact,
-  DiPython,
-  DiNodejs,
   DiGit,
-  DiDart,
-  DiHtml5,
-  DiMongodb,
 } from "react-icons/di";
 import {
-  SiSolidity,
   SiFlutter,
-  SiFirebase,
-  SiExpress,
-  SiCss3,
   SiPostman,
-  SiTailwindcss,
   SiVisualstudiocode
 } from "react-icons/si";
 
