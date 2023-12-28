@@ -13,12 +13,14 @@ import Sidebar from "./components/Sidebar";
 import About from "./components/Pages/About";
 import Project from "./components/Pages/Projects";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/Scrolltotop";
 function App() {
   return (
     <Router>
      <div className="App">
      <NavBar />
       <Sidebar/>
+      {/* <ScrollToTop/> */}
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/about" element={<About/>} />
