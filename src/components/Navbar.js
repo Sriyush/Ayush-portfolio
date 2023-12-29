@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { FaBars, FaTimes } from "react-icons/fa";
@@ -13,6 +13,8 @@ const NavbarContainer = styled.div`
   height: 60px;
   z-index: 10;
   top: 0;
+  backdrop-filter: ${({ isScrolled }) => (isScrolled ? "blur(5px)" : "none")};
+  transition: backdrop-filter 0.3s ease-in-out;
 `;
 
 const LogoContainer = styled(Link)`
@@ -87,11 +89,27 @@ const Hamburger = styled.div`
 const Navbar = () => {
   const navigate = useNavigate();
   const [click, setClick] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   const handleClick = () => setClick(!click);
 
   return (
-    <NavbarContainer>
+    <NavbarContainer isScrolled={isScrolled}>
       <LogoContainer to="/">
         <Logo>Ayush Srivastava</Logo>
       </LogoContainer>
