@@ -28,6 +28,9 @@ const Logo = styled.h1`
   font-size: 2rem;
   font-weight: bold;
   color: white;
+  @media (max-width: 760px) {
+  font-size:1.5rem;
+}
 `;
 
 const NavMenu = styled.ul`
@@ -56,8 +59,10 @@ const NavMenu = styled.ul`
 const NavItem = styled.li`
   padding: 0 1rem;
   color: white;
+  font-size:1.5rem;
   @media screen and (max-width: 768px) {
     padding: 1rem 0;
+    font-size: 1.5rem;
   }
 `;
 
@@ -128,7 +133,7 @@ const Navbar = () => {
         </NavItem>
 
         <NavItem>
-          <NavLink to="/projects" className="hoverElement">
+          <NavLink to="/projects" className="hoverElement" onClick={handleClick}>
             Projects
           </NavLink>
         </NavItem>

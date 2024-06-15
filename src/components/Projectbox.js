@@ -10,6 +10,7 @@ const StyledProjectBox = styled(Link)`
   border-radius: 0.375rem;
   margin: 1rem;
   text-decoration: none;
+  border-color:#cd5ff8;
   height: 200px;
   width: 400px;
   box-shadow: 4px 5px 4px 3px rgba(89, 4, 168, 0.137);

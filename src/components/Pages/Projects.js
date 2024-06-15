@@ -8,8 +8,8 @@ import vid from "./../../assets/Logo2.png"
 import tod from "./../../assets/Todlearnt.png"
 import log from "./../../assets/Logo1.png"
 const Rows = styled(Row)`
-  margin-left: 190px;
-  margin-block: 40px;
+  margin-left: 11rem;
+  margin-block: 3rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -17,7 +17,23 @@ const Rows = styled(Row)`
   @media (max-width: 760px) {
     margin-left: 0;
     margin-block: 0;
+    // display: flex;
+    // flex-direction: column;
+  }
+`;
+const Cols = styled(Col)`
+  @media (max-width: 760px) {
+    // margin-left: 0;
+    // margin-block: 0;
     display: flex;
+    flex-direction: row;
+  }
+`;
+const Resrow = styled(Row)`
+  display: flex;
+  flex-direction:row;
+  justify-content: center;
+  @media (max-width: 1080px){
     flex-direction: column;
   }
 `;
@@ -59,7 +75,7 @@ function Project(){
               Build it to,
               <Strongheading> Kill it</Strongheading>
             </H1>
-            <Row style={{display: 'flex',flexDirection: 'row',justifyContent: 'center',}}>
+            <Resrow>
             <Col>
             <ProjectBox
               title="SOSH"
@@ -75,7 +91,7 @@ function Project(){
               giturl="https://github.com/Sriyush/VideoFam-Flutter   "
               image = {vid}
             />
-          </Col>
+            </Col>
           <Col>
             <ProjectBox
               title="Todlearn"
@@ -92,7 +108,7 @@ function Project(){
               image = {log}
             />
           </Col>
-            </Row>
+            </Resrow>
                 </Rows>
             </Container>
         </Container>

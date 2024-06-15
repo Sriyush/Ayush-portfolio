@@ -25,7 +25,19 @@ const TechIconsWrapper = styled(Container)`
   flex-wrap: wrap;
   flex-direction: row;
 `;
-
+const Rows = styled(Row)`
+display: flex;
+flex-direction: row;
+justify-content: 'space-between';
+margin: 3rem;
+  @media (max-width: 1080px) {
+    // margin-left: 0;
+    margin-block: 0;
+    // margin-bottom:1rem;
+    display: flex;
+    flex-direction: column;
+  }
+`;
 const TechIconCol = styled(Col)`
   font-size: 4.5em;
   margin: 15px;
@@ -56,6 +68,10 @@ const MContainer = styled(Container)`
 border-radius: 10px;
 border: 1.7px solid rgba(200, 137, 230, 0.637);
 margin-inline: 10px;
+@media (max-width: 767px) {
+    // padding-bottom: rem;
+    margin-bottom: 1rem;  
+  }
 `;
 
 function Techstack() {
@@ -92,7 +108,7 @@ function Techstack() {
   ];
   return (
     <TechIconsWrapper>
-      <Row style={{display: 'flex',flexDirection: 'row',justifyContent: 'space-between',marginLeft: '70px',}}>
+      <Rows >
       <MContainer >
       <Col style={{ textAlign: "center" }}>
       <h1 style={{color: 'white'}}>Languages</h1>
@@ -117,8 +133,8 @@ function Techstack() {
         </Row>
       </Col>
         </MContainer>
-      </Row>
-      <Row style={{display: 'flex',flexDirection: 'row',justifyContent: 'space-between', marginBlockStart: '20px',marginLeft: '70px',}}>
+      </Rows>
+      <Rows>
       <MContainer>
       <Col style={{ textAlign: "center" }}>
       <h1 style={{color: 'white'}}>Backend</h1>
@@ -131,7 +147,7 @@ function Techstack() {
         </Row>
       </Col>
         </MContainer>
-        </Row>
+        </Rows>
     </TechIconsWrapper>
   );
 }

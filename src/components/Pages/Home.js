@@ -14,10 +14,10 @@ function Home() {
     <section>
       <Container fluid>
         <Particle />
-        <Container style={{padding: 90}}>
+        <StyledContainer>
           <Rows>
             <Col md={7}>
-              <H1 style={{ paddingBottom: 15}} >
+              <H1 style={{ paddingBottom: '2rem'}} >
                 Hi There!{" "}
                 <WaveSpan>
                   <span role="img" aria-label="wave">
@@ -35,15 +35,24 @@ function Home() {
               </StyledType>
               <BUTTON>Resume</BUTTON>
             </Col>
-            <Col md={5} >
+            <Col md={12} lg={5} style={{ paddingTop: '2rem'}}>
                 <Img src={ayush} alt="ayush" className="img-fluid"/>
             </Col>
             </Rows>
-        </Container>
+        </StyledContainer>
       </Container>
     </section>
   );
 }
+const StyledContainer = styled(Container)`
+  padding: 10rem ; /* Adjust top and bottom padding */
+  
+  @media (max-width: 576px) {
+    padding: 5rem;
+    padding-top:10rem; /* Add extra padding on top for mobile */
+
+  }
+`;
 const Rows =styled(Row)`
 margin-left: 190px;
 margin-block: 100px;
@@ -111,22 +120,35 @@ const WaveSpan = styled.span`
 `;
 const H1 =styled.h1`
 color: white;
-font-size: 30px
+font-size: 2rem;
+@media (max-width: 760px) {
+  font-size: 1.5rem;
+  }
 `
 const Strongheading = styled.strong`
   margin-left: 5px;
   color: #cd5ff8;
+  font-size: 2rem;
+  @media (max-width: 760px) {
+  font-size: 1.5rem;
+  }
 `;
 const Img = styled.img`
-  width: 250px; /* Set the desired width */
-  height: 250px; /* Set the desired height */
+  width: 15rem; /* Set the desired width */
+  height: 15rem; /* Set the desired height */
   border-radius: 40%; /* Make it circular */
+  @media (max-width: 760px) {
+  display:none;
+  }
 //   transform: translateY(-75%);
 //   margin-left: 400px;
 `;
 const StyledType=styled.div`
 color: #cd5ff8;
-font-size: 30px;
+font-size: 2rem;
 font-weight: bold;
+@media (max-width: 760px) {
+  font-size: 1rem;
+  }
 `
 export default Home;
