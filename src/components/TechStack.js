@@ -42,7 +42,6 @@ const TechIconCol = styled(Col)`
   font-size: 4.5em;
   margin: 15px;
   padding: 10px;
-//   color: rgba(200, 137, 230, 0.637);
   color: lightblue;
   opacity: 0.93;
   border: 1.7px solid rgba(200, 137, 230, 0.637);
@@ -52,7 +51,6 @@ const TechIconCol = styled(Col)`
   justify-content: center;
   box-shadow: 4px 5px 4px 3px rgba(89, 4, 168, 0.137);
   transition: all 0.4s ease 0s;
-//   flex: 0 0 calc(25% - 30px);
 
   &:hover {
     transform: scale(1.05);
@@ -60,19 +58,24 @@ const TechIconCol = styled(Col)`
   }
 
   @media (max-width: 767px) {
-    margin: 10px;
+    font-size: 2.5em; /* Reduce icon size */
+    margin: 8px; /* Reduce margin */
+    padding: 5px;
   }
 `;
 
 const MContainer = styled(Container)`
-border-radius: 10px;
-border: 1.7px solid rgba(200, 137, 230, 0.637);
-margin-inline: 10px;
-@media (max-width: 767px) {
-    // padding-bottom: rem;
-    margin-bottom: 1rem;  
+  border-radius: 10px;
+  border: 1.7px solid rgba(200, 137, 230, 0.637);
+  margin-inline: 10px;
+  padding: 1.5rem;
+
+  @media (max-width: 767px) {
+    padding: 1rem; /* Reduce padding */
+    margin-bottom: 0.5rem; /* Reduce margin */
   }
 `;
+
 
 function Techstack() {
 //   const icons = [

@@ -15,6 +15,7 @@ import {
     AiOutlineInstagram,
   } from "react-icons/ai";
   import { FaLinkedinIn } from "react-icons/fa";
+
   const SidebarWrapper = styled.div`
   position: fixed;
   top: 0;
@@ -32,8 +33,8 @@ const Buttoncontainer = styled.div`
 opacity:30% ;
   border-radius: 40px;
   opacity: 30%;
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
+  // background: rgba(255, 255, 255, 0.2);
+  // backdrop-filter: blur(10px);
 `
 const IconTextContainer = styled.button`
   display: flex;
@@ -60,7 +61,7 @@ const SidebarIcon = styled.span`
 `;
 
 const TextIcon = styled.span`
-  color: #FFF;
+  color: White;
   font-weight: bolder;
   font-size: 20px;
 //   text-transform: uppercase;

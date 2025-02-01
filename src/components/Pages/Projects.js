@@ -7,6 +7,7 @@ import smern from "./../../assets/s.png"
 import vid from "./../../assets/Logo2.png"
 import tod from "./../../assets/Todlearnt.png"
 import log from "./../../assets/Logo1.png"
+import DB from "./../../assets/DBSS.png"
 const Rows = styled(Row)`
   margin-left: 11rem;
   margin-block: 3rem;
@@ -85,11 +86,11 @@ function Project(){
               image = {smern}
             />
             <ProjectBox
-              title="VideoFam"
-              techStack="Flutter and FIrebase"
+              title="DbSynchro"
+              techStack="MERN Stack and Google apps Script"
               description="Description"
-              giturl="https://github.com/Sriyush/VideoFam-Flutter   "
-              image = {vid}
+              giturl="https://github.com/Sriyush"
+              image = {DB}
             />
             </Col>
           <Col>
