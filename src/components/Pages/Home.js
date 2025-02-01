@@ -10,6 +10,7 @@ import ayush from "../../assets/fit.png";
 import Type from "../Type";
 
 function Home() {
+  const resumeUrl = "https://drive.google.com/file/d/1i1xICDrjaS5abEuRwL_IuLk5eOAEz_GF/view?usp=drive_link";
   return (
     <section>
       <Container fluid>
@@ -33,7 +34,7 @@ function Home() {
               <StyledType>
                 <Type />
               </StyledType>
-              <BUTTON>Resume</BUTTON>
+              <BUTTON onClick={() => window.open(resumeUrl, "_blank")}>Resume</BUTTON>
             </Col>
             <Col md={12} lg={5} style={{ paddingTop: '2rem'}}>
                 <Img src={ayush} alt="ayush" className="img-fluid"/>
