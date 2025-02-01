@@ -6,7 +6,7 @@ import cover from "../../assets/cover.png";
 import styled, { keyframes } from "styled-components";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import {Button} from 'react-bootstrap';
-import ayush from "../../assets/Ayush.jpg";
+import ayush from "../../assets/fit.png";
 import Type from "../Type";
 
 function Home() {
@@ -47,25 +47,29 @@ function Home() {
 const StyledContainer = styled(Container)`
   padding: 10rem ; /* Adjust top and bottom padding */
   
-  @media (max-width: 576px) {
+  @media (max-width: 760px) {
     padding: 5rem;
     padding-top:10rem; /* Add extra padding on top for mobile */
 
   }
 `;
-const Rows =styled(Row)`
-margin-left: 190px;
-margin-block: 100px;
-display: flex;
-flex-direction: row;
-justify-content: space-between;
-@media (max-width: 760px) {
-  margin-left: 0;
-  margin-block: 0;
+const Rows = styled(Row)`
+  margin-left: 190px;
+  margin-block: 100px;
   display: flex;
-  flex-direction: column;
-}
-`
+  flex-direction: row;
+  justify-content: space-between;
+
+  @media (max-width: 760px) {
+    margin-left: 0;
+    margin-block: 0;
+    flex-direction: column; /* Image will come after text */
+    align-items: center;
+    text-align: center;
+  }
+`;
+
+
 const BUTTON = styled.button`
   background: linear-gradient(to right, transparent 50%, transparent 50%);
   background-size: 200% 100%;
@@ -122,7 +126,7 @@ const H1 =styled.h1`
 color: white;
 font-size: 2rem;
 @media (max-width: 760px) {
-  font-size: 1.5rem;
+  // font-size: 1.5rem;
   }
 `
 const Strongheading = styled.strong`
@@ -130,25 +134,41 @@ const Strongheading = styled.strong`
   color: #cd5ff8;
   font-size: 2rem;
   @media (max-width: 760px) {
-  font-size: 1.5rem;
+  // font-size: 1.5rem;
   }
 `;
 const Img = styled.img`
-  width: 15rem; /* Set the desired width */
-  height: 15rem; /* Set the desired height */
-  border-radius: 40%; /* Make it circular */
-  @media (max-width: 760px) {
-  display:none;
+  width: 16rem; /* Adjusted size */
+  height: 16rem;
+  border-radius: 50%; /* Circular shape */
+  background: rgba(205, 95, 248, 0.2); /* Light purple circular background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem; /* Adjust padding */
+  box-shadow: 0 0 15px rgba(205, 95, 248, 0.5); /* Glow effect */
+  margin-top: 0; /* Default margin */
+
+  img {
+    width: 85%; /* Ensure image fits well */
+    height: 85%;
+    border-radius: 50%; /* Circular image */
+    object-fit: cover; /* Ensures proper scaling */
   }
-//   transform: translateY(-75%);
-//   margin-left: 400px;
+
+  @media (max-width: 760px) {
+    margin-top: 2rem; /* Ensure spacing after text */
+  }
 `;
+
+
+
 const StyledType=styled.div`
 color: #cd5ff8;
 font-size: 2rem;
 font-weight: bold;
 @media (max-width: 760px) {
-  font-size: 1rem;
+  font-size: 1.5rem;  
   }
 `
 export default Home;
